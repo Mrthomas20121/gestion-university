@@ -10,12 +10,15 @@ else
 	$uc = $_REQUEST['uc'];
 
 $university = University::getUniversity();
-switch($uc)
-{
-	case 'accueil':
-		{include("controleurs/accueil.php");break;}
-  case 'connection' :
-    { include("controleurs/connection.php");break;  }
+switch($uc) {
+	case 'accueil': {
+        include("controleurs/accueil.php");
+        break;
+    }
+    case 'connection' : { 
+        include("controleurs/connection.php");
+        break;  
+    }
 }
-include("vues/footer.php") ;
+include("vues/footer.php");
 ?>
