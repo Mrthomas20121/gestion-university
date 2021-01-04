@@ -19,8 +19,16 @@ switch($uc) {
         include("controleurs/accueil.php");
         break;
     }
-    case 'connection' : { 
+    case 'connection': {
         include("controleurs/connection.php");
+        break;  
+    }
+    case 'employer': {
+        include("controleurs/employer.php");
+        break;  
+    }
+    case 'etudiant': {
+        include("controleurs/etudiant.php");
         break;  
     }
 }
