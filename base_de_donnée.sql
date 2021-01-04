@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS MLR1;
+DROP DATABASE IF EXISTS UNIVERSITY;
 
-CREATE DATABASE IF NOT EXISTS MLR1;
-USE MLR1;
+CREATE DATABASE IF NOT EXISTS UNIVERSITY;
+USE UNIVERSITY;
 # -----------------------------------------------------------------------------
 #       TABLE : EMPLOYER
 # -----------------------------------------------------------------------------

@@ -16,17 +16,17 @@ class University
 		* nom de la BD
 		* @var string $bdd
 		*/
-      	private static $bdd='dbname=ppegsb';
+      	private static $bdd='dbname=university';
 		/**
 		* nom de l'utilisateur utilisé pour la connexion
 		* @var string $user
 		*/
-      	private static $user='ppe' ;
+      	private static $user='root' ;
 		/**
 		* mdp de l'utilisateur utilisé pour la connexion
 		* @var string $mdp
 		*/
-      	private static $mdp='RgokrLcJ7vMWsSiW' ;
+      	private static $mdp='' ;
 		/**
 		* objet pdo de la classe University pour la connexion
 		* @var PDO $monPdo
