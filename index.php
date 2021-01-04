@@ -4,9 +4,9 @@ session_start();
 // ajoute la class php une seul fois
 require_once("modele/class.university.php");
 
-// l'entete et le header de toutes les pages.
-//include("vues/entete.php");
+// le header de toutes les pages.
 include("vues/header.php");
+include("controleurs/bandeau.php");
 
 if(!isset($_REQUEST['uc']))
     $uc = 'accueil';

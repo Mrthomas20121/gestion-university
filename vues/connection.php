@@ -1,9 +1,15 @@
-<form method="get" action="">
-    <!-- username -->
-    <label for="username">Username:</label>
-    <input type="text" name="username" placeholder="username">
+<div class="container">
 
-    <!-- password -->
-    <label for="password">Password:</label>
-    <input type="text" name="password" placeholder="password">
-</form>
+    <form method="post" action="index.php?uc=connection&action=confirmation">
+        <!-- username -->
+        <label for="username">Nom D'utilisateur:</label>
+        <input type="text" class="form-control" name="username" placeholder="username">
+
+        <!-- password -->
+        <label for="password">Mot de passe:</label>
+        <input type="password" class="form-control" name="password" placeholder="password">
+
+        <button type="submit" class="button blue noAnim">Envoyer</button>
+    </form>
+
+</div>

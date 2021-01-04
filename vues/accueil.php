@@ -1,0 +1,3 @@
+<div class="container-fluid">
+    <h2>Bienvenue <?php echo $_SESSION['user']['prenom']; ?><h2>
+</div>

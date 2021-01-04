@@ -74,17 +74,17 @@ class University
   public function getUser($username, $password)
  {
 	//$req = "select * from EMPLOYER WHERE id_categorie IN (SELECT DISTINCT code FROM CATEGORIE WHERE USERNAME = :username)";
-    $req = "select * from CATEGORIE INNER JOIN EMPLOYER ON CATEGORIE.code=EMPLOYER.id_categorie WHERE USERNAME = :username";
+    $req = "select * from EMPLOYER WHERE USERNAME = :username";
     $res = University::$monPdo->prepare($req);
     $res->execute(array('username' => $username));
-    $lesLignes = $res->fetch();
-    if(password_verify($password, $lesLignes[8])) {
+	$lesLignes = $res->fetch();
+	?><script>alert(<?php echo $lesLignes; ?>)</script><?php
+    if(password_verify($password, $lesLignes[5])) {
       $user = [
-          "id_categorie" => $lesLignes[0],
-          "nom_categorie" => $lesLignes[1],
+          "username" => $lesLignes[4],
+          "password" => $lesLignes[5],
           "prenom" => $lesLignes[2],
-          "adress" => $lesLignes[3],
-          "cp" => $lesLignes[4],
+          "nom" => $lesLignes[3]
       ];
     }
     else {
