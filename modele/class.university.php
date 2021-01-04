@@ -112,19 +112,61 @@ class University
 	/**
 	 * Ajoute un étudiant à la base de donnée
 	 */
-	public function addEtudiant($nom, $prenom, $addresse, $tel, $mail)
+	public function addEtudiant($nom, $prenom, $adresse, $tel, $mail)
 	{
 		//$req = "select * from EMPLOYER WHERE id_categorie IN (SELECT DISTINCT code FROM CATEGORIE WHERE USERNAME = :username)";
-		$req = "INSERT INTO etudiant VALUES(:nom, :prenom, :addresse, :tel, :mail)";
+		$req = "INSERT INTO `etudiant` (`ID`, `NOM`, `PRENOM`, `ADRESSE`, `TEL`, `MAIL`) VALUES (NULL, :nom, :prenom, :adresse, :tel, :mail)";
 		$res = University::$monPdo->prepare($req);
 		$res->execute(array(
 			'nom' => $nom,
 			'prenom' => $prenom,
-			'address' => $addresse,
+			'adress' => $adresse,
 			'tel' => $tel,
 			'mail' => $mail
 		));
-		
+	}
+
+	/**
+	 * Modifie les information d'un étudiant
+	 */
+	public function editEtudiant($id, $nom, $prenom, $adresse, $tel, $mail)
+	{
+		$req = "UPDATE `etudiant` SET NOM=:nom, PRENOM=:prenom, ADRESSE=:adresse, TEL=:tel, MAIL=:mail WHERE ID=:id";
+		$res = University::$monPdo->prepare($req);
+		$res->execute(array(
+			'nom' => $nom,
+			'prenom' => $prenom,
+			'adresse' => $adresse,
+			'tel' => $tel,
+			'mail' => $mail,
+			'id' => $id
+		));
+	}
+
+	/**
+	 * Récupères les informations d'utilisateurs
+	 */
+	public function getEtudiants()
+	{
+		$req = "SELECT * FROM etudiant";
+		$res = University::$monPdo->prepare($req);
+		$res->execute();
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+	}
+
+	/**
+	 * Récupères les informations d'utilisateurs
+	 */
+	public function getEtudiant($id)
+	{
+		$req = "SELECT * FROM etudiant WHERE ID=:id";
+		$res = University::$monPdo->prepare($req);
+		$res->execute(array(
+			'id' => $id
+		));
+		$lesLignes = $res->fetch();
+		return $lesLignes;
 	}
 
 

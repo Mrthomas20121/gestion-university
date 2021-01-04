@@ -26,8 +26,8 @@
                           Etudiants
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="etudiant">
-                          <li><a class="dropdown-item" href="index.php?uc=etudiant&action=ajouter">Saisir un étudiant</a></li>
-                          <li><a class="dropdown-item" href="index.php?uc=etudiant&action=modifier">Modifier un étudiant</a></li>
+                          <li><a class="dropdown-item" href="index.php?uc=etudiant&action=formAjout">Saisir un étudiant</a></li>
+                          <li><a class="dropdown-item" href="index.php?uc=etudiant&action=formMod">Modifier un étudiant</a></li>
                           <li><a class="dropdown-item" href="#">Synthèse d\'un(e) étudiant(e)</a></li>
                         </ul>
                       </li>';
