@@ -1,3 +1,5 @@
+<!-- header.php -->
+<!-- Header de toutes les pages -->
 <!DOCTYPE HTML>
 <!-- TITRE ET MENUS -->
 <html lang="fr">

@@ -1,3 +1,5 @@
+<!-- bandeau_offline.php -->
+<!-- bandeau de connection quand l'utilisateur n'est pas connecté -->
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">

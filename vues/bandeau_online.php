@@ -1,3 +1,5 @@
+<!-- bandeau_online.php -->
+<!-- bandeau de connection quand l'utilisateur est connecté-->
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">

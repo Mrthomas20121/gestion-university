@@ -1,3 +1,6 @@
+<!-- connection.php -->
+<!-- gestion de la connection/deconnection de l'utilisateur -->
+<!-- usage: index.php?ec=connection&action=connection, index.php?ec=connection&action=confirmation, index.php?ec=connection&action=deconnection -->
 <?php
 $action = $_REQUEST['action'];
 switch($action)

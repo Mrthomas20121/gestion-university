@@ -1,3 +1,6 @@
+<!-- etudiant.php -->
+<!-- responsable de l'ajout et la modification d'un(e) etudiant(e) -->
+<!-- usage: index.php?ec=etudiant&action=ajouter, index.php?ec=etudiant&action=modifier, index.php?ec=etudiant&action=synthese -->
 <?php
 $action = $_REQUEST['action'];
 switch($action)

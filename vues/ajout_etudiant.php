@@ -1,8 +1,10 @@
+<!-- ajout_etudiant.php -->
+<!-- formulaire d'ajout d'un(e) étudiant(e) -->
 <div class="container">
 
     <form method="post" action="index.php?uc=etudiant&action=ajouter">
         <!-- nom -->
-        <label for="nom">Nomr:</label>
+        <label for="nom">Nom:</label>
         <input type="text" class="form-control" name="nom" placeholder="nom">
 
         <!-- prenom -->
