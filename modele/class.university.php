@@ -67,65 +67,65 @@ class University
 		return University::$myUniversity;
 	}
 
-/**
- * Retourne les informations utilisateurs
- * @return array $user les informations utilisateurs
- */
-public function getUser($username, $password)
- {
-	//$req = "select * from EMPLOYER WHERE id_categorie IN (SELECT DISTINCT code FROM CATEGORIE WHERE USERNAME = :username)";
-    $req = "select * from EMPLOYER WHERE USERNAME = :username";
-    $res = University::$monPdo->prepare($req);
-    $res->execute(array('username' => $username));
-	$lesLignes = $res->fetch();
-	$categorie = $this->getCategorie($lesLignes[1]);
-    if(password_verify($password, $lesLignes[5])) {
-      $user = [
-          "username" => $lesLignes[4],
-          "password" => $lesLignes[5],
-          "prenom" => $lesLignes[2],
-		  "nom" => $lesLignes[3],
-		  "id_categorie" => $lesLignes[1],
-		  "categorie" => $categorie
-      ];
-    }
-    else {
-        $user = false;
-    }
-    return $user;
-}
+	/**
+	 * Retourne les informations utilisateurs
+	 * @return array $user les informations utilisateurs
+	 */
+	public function getUser($username, $password)
+	{
+		//$req = "select * from EMPLOYER WHERE id_categorie IN (SELECT DISTINCT code FROM CATEGORIE WHERE USERNAME = :username)";
+		$req = "select * from EMPLOYER WHERE USERNAME = :username";
+		$res = University::$monPdo->prepare($req);
+		$res->execute(array('username' => $username));
+		$lesLignes = $res->fetch();
+		$categorie = $this->getCategorie($lesLignes[1]);
+		if(password_verify($password, $lesLignes[5])) {
+		$user = [
+			"username" => $lesLignes[4],
+			"password" => $lesLignes[5],
+			"prenom" => $lesLignes[2],
+			"nom" => $lesLignes[3],
+			"id_categorie" => $lesLignes[1],
+			"categorie" => $categorie
+		];
+		}
+		else {
+			$user = false;
+		}
+		return $user;
+	}
 
-/**
- * Retourne la catégorie à partir de l'id de la categorie
- * @return string la categorie
- */
-public function getCategorie($id)
- {
-	//$req = "select * from EMPLOYER WHERE id_categorie IN (SELECT DISTINCT code FROM CATEGORIE WHERE USERNAME = :username)";
-    $req = "select * from categorie WHERE ID_CATEGORIE = :categorie";
-    $res = University::$monPdo->prepare($req);
-    $res->execute(array('categorie' => $id));
-	$lesLignes = $res->fetch();
-    return $lesLignes[1];
-}
+	/**
+	 * Retourne la catégorie à partir de l'id de la categorie
+	 * @return string la categorie
+	 */
+	public function getCategorie($id)
+	{
+		//$req = "select * from EMPLOYER WHERE id_categorie IN (SELECT DISTINCT code FROM CATEGORIE WHERE USERNAME = :username)";
+		$req = "select * from categorie WHERE ID_CATEGORIE = :categorie";
+		$res = University::$monPdo->prepare($req);
+		$res->execute(array('categorie' => $id));
+		$lesLignes = $res->fetch();
+		return $lesLignes[1];
+	}
 
-/**
- * Ajoute un étudiant à la base de donnée
- */
-public function addEtudiant($nom, $prenom, $addresse, $tel, $mail)
- {
-	//$req = "select * from EMPLOYER WHERE id_categorie IN (SELECT DISTINCT code FROM CATEGORIE WHERE USERNAME = :username)";
-    $req = "INSERT INTO etudiant VALUES(:nom, :prenom, :addresse, :tel, :mail)";
-    $res = University::$monPdo->prepare($req);
-    $res->execute(array(
-		'nom' => $nom,
-		'prenom' => $prenom,
-		'address' => $addresse,
-		'tel' => $tel,
-		'mail' => $mail
-	));
-	
-}
+	/**
+	 * Ajoute un étudiant à la base de donnée
+	 */
+	public function addEtudiant($nom, $prenom, $addresse, $tel, $mail)
+	{
+		//$req = "select * from EMPLOYER WHERE id_categorie IN (SELECT DISTINCT code FROM CATEGORIE WHERE USERNAME = :username)";
+		$req = "INSERT INTO etudiant VALUES(:nom, :prenom, :addresse, :tel, :mail)";
+		$res = University::$monPdo->prepare($req);
+		$res->execute(array(
+			'nom' => $nom,
+			'prenom' => $prenom,
+			'address' => $addresse,
+			'tel' => $tel,
+			'mail' => $mail
+		));
+		
+	}
 
 
 

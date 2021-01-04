@@ -1,2 +1,2 @@
-# Projet PHP
-Projet PHP: Gestion d'une université
+# Projet PHP Université D'orléans Groupe B
+Pour utiliser le projet chez vous, il faut changer les variables `$user` et `$mdp` dans la class class.university.php. si besoin, créer un utilisateur et donner lui accès à la base de donnée University. le script de création de la base est base_de_donnée.sql
