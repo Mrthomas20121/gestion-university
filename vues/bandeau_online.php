@@ -31,14 +31,14 @@
                           <li><a class="dropdown-item" href="#">Synthèse d\'un(e) étudiant(e)</a></li>
                         </ul>
                       </li>';
-                      echo '<li class="nav-item"><a class="nav-link" href="#">Rendez-vous</a></li>'; // rendez vous avec un agent administratif pour parler d'un service payant
+                      echo '<li class="nav-item"><a class="nav-link" href="index.php?uc=rendezvous&action=prendre">Rendez-vous</a></li>'; // rendez vous avec un agent administratif pour parler d'un service payant
                       echo '<li class="nav-item"><a class="nav-link" href="#">Payement</a></li>'; // effectuer le payement d'un service en cash/le mettre en différé
                       echo '<li class="nav-item"><a class="nav-link" href="#">Différé</a></li>'; // mettre un payement en différé, effectuer le remboursement d'un ou plusieur différe
                     }
                     else { // directeur
                         echo '<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="service" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Etudiants
+                          Services
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="service">
                           <li><a class="dropdown-item" href="index.php?uc=service&action=formAjout">Ajouter un service</a></li>

@@ -31,6 +31,14 @@ switch($uc) {
         include("controleurs/message.php");
         break;  
     }
+    case 'service': {
+        include("controleurs/service.php");
+        break;  
+    }
+    case 'rendezvous': {
+        include("controleurs/rendez_vous.php");
+        break;  
+    }
 }
 
 // footer de toutes les pages.

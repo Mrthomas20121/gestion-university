@@ -4,8 +4,8 @@
 
     <h2>Ajoute d'un service</h2>
     <form method="post" action="index.php?uc=service&action=ajouter">
-        <!-- service -->
-        <label for="libelle">service:</label>
+        <!-- Libelle -->
+        <label for="libelle">Nom:</label>
         <input type="text" class="form-control" name="libelle">
 
         <!-- Prix -->

@@ -96,6 +96,20 @@ class University
 	}
 
 	/**
+	 * Récupère les employer de la categorie passée en paramettre
+	 */
+	public function getEmployer($id)
+	{
+		$req = "SELECT * FROM employer WHERE ID_CATEGORIE=:id";
+		$res = University::$monPdo->prepare($req);
+		$res->execute(array(
+			'id' => $id
+		));
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+	}
+
+	/**
 	 * Retourne la catégorie à partir de l'id de la categorie
 	 * @return string la categorie
 	 */
@@ -219,6 +233,23 @@ class University
 			'libelle' => $libelle,
 			'prix' => $prix,
 			'id' => $id
+		));
+	}
+
+	/**
+	 * saisie un rendez-vous
+	 */
+	public function addRendezvous($agent, $serv, $etudiant, $date, $conclusion, $etat)
+	{
+		$req = "INSERT INTO rendez_vous VALUES (NULL, :serv, :agent, :etudiant, :date_rdv, :conclusion, :etat)";
+		$res = University::$monPdo->prepare($req);
+		$res->execute(array(
+			'serv' => $serv,
+			'agent' => $agent,
+			'etudiant' => $etudiant,
+			'date_rdv' => $date,
+			'conclusion' => $conclusion,
+			'etat' => $etat
 		));
 	}
 

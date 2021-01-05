@@ -1,4 +1,4 @@
-<!-- modification_service_final.php -->
+<!-- modification_service.php -->
 <!-- formulaire de modification d'un service -->
 <div class="container">
 
