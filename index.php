@@ -27,6 +27,10 @@ switch($uc) {
         include("controleurs/etudiant.php");
         break;  
     }
+    case 'message': {
+        include("controleurs/message.php");
+        break;  
+    }
 }
 
 // footer de toutes les pages.

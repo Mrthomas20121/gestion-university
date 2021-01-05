@@ -8,7 +8,7 @@ switch($action)
     case 'ajouter':
     {
         $university->addEtudiant($_REQUEST['nom'], $_REQUEST['prenom'], $_REQUEST['adresse'], $_REQUEST['tel'], $_REQUEST['mail']);
-        header('Location: ./index.php?uc=accueil');
+        header('Location: ./index.php?uc=message&message=Etudiant '. $_REQUEST['nom'].' a été ajouté.');
         die();
         break;
     }
@@ -32,7 +32,7 @@ switch($action)
     case 'modifier':
     {
         $university->editEtudiant($_REQUEST['id'], $_REQUEST['nom'], $_REQUEST['prenom'], $_REQUEST['adresse'], $_REQUEST['tel'], $_REQUEST['mail']);
-        header('Location: ./index.php?uc=accueil');
+        header('Location: ./index.php?uc=message&message=Etudiant '. $_REQUEST['nom'].' a été modifié.');
         die();
 
         break;

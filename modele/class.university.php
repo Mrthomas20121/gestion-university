@@ -120,14 +120,14 @@ class University
 		$res->execute(array(
 			'nom' => $nom,
 			'prenom' => $prenom,
-			'adress' => $adresse,
+			'adresse' => $adresse,
 			'tel' => $tel,
 			'mail' => $mail
 		));
 	}
 
 	/**
-	 * Modifie les information d'un étudiant
+	 * Modifie un étudiant
 	 */
 	public function editEtudiant($id, $nom, $prenom, $adresse, $tel, $mail)
 	{
@@ -144,7 +144,7 @@ class University
 	}
 
 	/**
-	 * Récupères les informations d'utilisateurs
+	 * Récupères les étudiant(e)
 	 */
 	public function getEtudiants()
 	{
@@ -156,7 +156,7 @@ class University
 	}
 
 	/**
-	 * Récupères les informations d'utilisateurs
+	 * Récupères un(e) étudiant(e)
 	 */
 	public function getEtudiant($id)
 	{
@@ -169,7 +169,58 @@ class University
 		return $lesLignes;
 	}
 
+	/**
+	 * Ajoute un service
+	 */
+	public function addService($libelle, $prix)
+	{
+		$req = "INSERT INTO `service` (`ID`, `LIBELLE`, `PRIX`) VALUES (NULL, :libelle, :prix)";
+		$res = University::$monPdo->prepare($req);
+		$res->execute(array(
+			'libelle' => $libelle,
+			'prix' => $prix
+		));
+	}
 
+	/**
+	 * Récupère les services
+	 */
+	public function getServices()
+	{
+		$req = "SELECT * FROM service";
+		$res = University::$monPdo->prepare($req);
+		$res->execute();
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+	}
+
+	/**
+	 * Récupère un service
+	 */
+	public function getService($id)
+	{
+		$req = "SELECT * FROM service WHERE ID=:id";
+		$res = University::$monPdo->prepare($req);
+		$res->execute(array(
+			'id' => $id
+		));
+		$lesLignes = $res->fetch();
+		return $lesLignes;
+	}
+
+	/**
+	 * Modifie un service
+	 */
+	public function editService($id, $libelle, $prix)
+	{
+		$req = "UPDATE `etudiant` SET NOM=:libelle, PRENOM=:prix WHERE ID=:id";
+		$res = University::$monPdo->prepare($req);
+		$res->execute(array(
+			'libelle' => $libelle,
+			'prix' => $prix,
+			'id' => $id
+		));
+	}
 
 }
 ?>
