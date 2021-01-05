@@ -39,6 +39,10 @@ switch($uc) {
         include("controleurs/rendez_vous.php");
         break;  
     }
+    case 'planning': {
+        include("controleurs/planning.php");
+        break;  
+    }
 }
 
 // footer de toutes les pages.

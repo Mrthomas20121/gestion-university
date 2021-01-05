@@ -2,7 +2,6 @@
 <!-- List des services -->
 <div class="container">
     <form method="post" action="<?php echo $url; ?>">
-        <!-- etudiant -->
         <label for="service">Service:</label>
         <select name="service" class="form-control">
             <?php

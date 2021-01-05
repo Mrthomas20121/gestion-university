@@ -1,7 +1,6 @@
 <!-- connection.php -->
 <!-- formulaire de connection -->
 <div class="container">
-
     <form method="post" action="index.php?uc=connection&action=confirmation">
         <!-- username -->
         <label for="username">Nom D'utilisateur:</label>

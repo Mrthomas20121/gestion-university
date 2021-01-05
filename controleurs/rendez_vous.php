@@ -6,13 +6,12 @@ switch($action)
 {
     case 'prendre':
     {
-        $lesEmployers = $university->getEmployer(1);
+        $lesEmployers = $university->getEmployerFrom(1);
         $lesServices = $university->getServices();
         $lesEtudiants = $university->getEtudiants();
         include("vues/saisie_rendez_vous.php");
         break;
     }
-
     case 'ajouter':
     {
         $university->addRendezvous($_REQUEST['employer'], $_REQUEST['service'], $_REQUEST['etudiant'], $_REQUEST['date'], $_REQUEST['conclusion'], $_REQUEST['etat']);
@@ -21,3 +20,4 @@ switch($action)
         break;
     }
 }
+?>

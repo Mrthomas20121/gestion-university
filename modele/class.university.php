@@ -96,11 +96,39 @@ class University
 	}
 
 	/**
-	 * Récupère les employer de la categorie passée en paramettre
+	 * Récupère un employer à partir de son id
 	 */
 	public function getEmployer($id)
 	{
+		$req = "SELECT * FROM employer WHERE ID=:id";
+		$res = University::$monPdo->prepare($req);
+		$res->execute(array(
+			'id' => $id
+		));
+		$lesLignes = $res->fetch();
+		return $lesLignes;
+	}
+
+	/**
+	 * Récupère les employer de la categorie passée en paramettre
+	 */
+	public function getEmployerFrom($id)
+	{
 		$req = "SELECT * FROM employer WHERE ID_CATEGORIE=:id";
+		$res = University::$monPdo->prepare($req);
+		$res->execute(array(
+			'id' => $id
+		));
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+	}
+
+	/**
+	 * Récupère les employer de la categorie passée en paramettre
+	 */
+	public function getPlanningFromAgent($id)
+	{
+		$req = "SELECT * FROM `rendez_vous` WHERE ID_CRÉER =:id";
 		$res = University::$monPdo->prepare($req);
 		$res->execute(array(
 			'id' => $id

@@ -16,7 +16,7 @@
                 
                 if(isset($_SESSION['user'])) {
                     if($_SESSION['user']['id_categorie'] == 1) { // agent administrateur
-                        echo '<li class="nav-item"><a class="nav-link" href="#">Planning</a></li>';
+                        echo '<li class="nav-item"><a class="nav-link" href="index.php?uc=planning&action=get">Planning</a></li>';
                         echo '<li class="nav-item"><a class="nav-link" href="#">Synthèse d\'un(e) étudiant(e)</a></li>';
                     
                     }
