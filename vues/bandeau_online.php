@@ -26,8 +26,8 @@
                           Etudiants
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="etudiant">
-                          <li><a class="dropdown-item" href="index.php?uc=etudiant&action=formAjout">Saisir un étudiant</a></li>
-                          <li><a class="dropdown-item" href="index.php?uc=etudiant&action=formMod">Modifier un étudiant</a></li>
+                          <li><a class="dropdown-item" href="index.php?uc=etudiant&action=formAjout">Saisir un(e) étudiant(e)</a></li>
+                          <li><a class="dropdown-item" href="index.php?uc=etudiant&action=formMod">Modifier un(e) étudiant(e)</a></li>
                           <li><a class="dropdown-item" href="#">Synthèse d\'un(e) étudiant(e)</a></li>
                         </ul>
                       </li>';
@@ -36,7 +36,16 @@
                       echo '<li class="nav-item"><a class="nav-link" href="#">Différé</a></li>'; // mettre un payement en différé, effectuer le remboursement d'un ou plusieur différe
                     }
                     else { // directeur
-
+                        echo '<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="service" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Etudiants
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="service">
+                          <li><a class="dropdown-item" href="index.php?uc=service&action=formAjout">Ajouter un service</a></li>
+                          <li><a class="dropdown-item" href="index.php?uc=service&action=formMod">Modifier un service</a></li>
+                          <li><a class="dropdown-item" href="index.php?uc=service&action=formSupp">Supprimer un service</a></li>
+                        </ul>
+                      </li>';
                     }
                 }
 

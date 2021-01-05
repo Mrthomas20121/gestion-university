@@ -1,7 +1,7 @@
-<!-- modification_service.php -->
-<!-- formulaire de modification d'un service -->
+<!-- list_service.php -->
+<!-- List des services -->
 <div class="container">
-    <form method="post" action="index.php?uc=service&action=formModFinal">
+    <form method="post" action="<?php echo $url; ?>">
         <!-- etudiant -->
         <label for="service">Service:</label>
         <select name="service" class="form-control">
